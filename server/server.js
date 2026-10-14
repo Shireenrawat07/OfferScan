@@ -24,7 +24,7 @@ const allowedOrigins = new Set([
     .split(",")
     .map((origin) => origin.trim())
     .filter(Boolean),
-  "https://offerlens-app-seven.vercel.app",
+  "https://offerscan-4b9ybflrg-shireen10.vercel.app",
 ]);
 
 app.use(requestContext);
