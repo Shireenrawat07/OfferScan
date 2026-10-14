@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://offerlens-app-api.onrender.com/api/:path*"
+      "destination": "https://offerscan.onrender.com/api/:path*"
     },
     {
       "source": "/(.*)",
