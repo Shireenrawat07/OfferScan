@@ -1,6 +1,6 @@
-# OfferLens Backend
+# OfferScan Backend
 
-Express API for OfferLens health checks, URL reputation lookups, cookie-based accounts, and private analysis history.
+Express API for OfferScan health checks, URL reputation lookups, cookie-based accounts, and private analysis history.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ Use Node.js 20.19+ or 22.12+, which is required by the project's Vite 8 frontend
 
 ## Install
 
-From the OfferLens project root, install the frontend and backend dependencies:
+From the OfferScan project root, install the frontend and backend dependencies:
 
 ```powershell
 npm install
@@ -23,7 +23,7 @@ The backend reads its configuration from the existing `server/.env`. Required va
 ## Create and connect a MongoDB Atlas database
 
 1. Sign in to MongoDB Atlas, select or create a project, and create a cluster/deployment.
-2. In the project's **Security > Database & Network Access** area, create a database user for OfferLens. This database user is separate from your Atlas website login. Give the app only the database permissions it needs.
+2. In the project's **Security > Database & Network Access** area, create a database user for OfferScan. This database user is separate from your Atlas website login. Give the app only the database permissions it needs.
 3. In **Network Access**, add your current IP address for local development. For a deployed app, add the backend server's outbound IP. Avoid allowing access from every IP.
 4. In the cluster's **Connect** dialog, choose the Node.js driver and copy the connection string. Replace the username and password placeholders. If the password includes reserved URL characters, URL-encode them.
 5. Paste the Atlas URI into `MONGODB_URI` in `server/.env`. Preserve any existing value until its replacement is ready. Mongoose connects before Express begins listening and exits with a safe error if Atlas is unavailable.
@@ -51,7 +51,7 @@ Copy-Item .env.example .env.local
 
 ## Run the app
 
-Open two terminals in the OfferLens project root.
+Open two terminals in the OfferScan project root.
 
 **Terminal 1 - backend:**
 

@@ -1,5 +1,7 @@
 export const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
+  import.meta.env.PROD
+    ? ""
+    : import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
 ).replace(/\/+$/, "");
 
 export async function apiRequest(path, options = {}) {
@@ -14,7 +16,7 @@ export async function apiRequest(path, options = {}) {
       },
     });
   } catch {
-    throw new Error("Could not reach OfferLens. Check that the backend is running.");
+    throw new Error("Could not reach OfferScan. Check that the backend is running.");
   }
   let body;
   try {

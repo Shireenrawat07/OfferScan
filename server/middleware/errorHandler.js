@@ -88,7 +88,7 @@ function errorHandler(error, req, res, next) {
   } else if (["MongoNetworkError", "MongoServerSelectionError", "MongooseServerSelectionError", "MongoTimeoutError"].includes(errorName)) {
     status = 503;
     code = "DATABASE_UNAVAILABLE";
-    message = "OfferLens could not reach the database. Please try again shortly.";
+    message = "OfferScan could not reach the database. Please try again shortly.";
   }
 
   return res.status(status).json({

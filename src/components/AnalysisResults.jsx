@@ -129,7 +129,7 @@ function AnalysisResults({ results, assessment }) {
 
       <p className="text-center text-xs leading-5 text-slate-500">
         {disclaimer ||
-          "OfferLens highlights potential risk signals. It cannot confirm fraud or guarantee that an offer is safe."}
+          "OfferScan highlights potential risk signals. It cannot confirm fraud or guarantee that an offer is safe."}
       </p>
     </section>
   );

@@ -59,7 +59,7 @@ function AppContent() {
   } else if (path === '/history') {
     page = loading ? <main className="p-12 text-center text-slate-600">Checking your session…</main> : user ? <HistoryPage /> : <AuthPage mode="login" navigate={navigate} />
   } else if (path !== '/') {
-    page = <main className="min-h-[70vh] px-6 py-20 text-center"><h1 className="text-3xl font-bold text-[#2E164B]">Page not found</h1><button onClick={() => navigate('/')} className="mt-5 rounded-xl bg-[#2E164B] px-5 py-3 font-semibold text-white">Return to OfferLens</button></main>
+    page = <main className="min-h-[70vh] px-6 py-20 text-center"><h1 className="text-3xl font-bold text-[#2E164B]">Page not found</h1><button onClick={() => navigate('/')} className="mt-5 rounded-xl bg-[#2E164B] px-5 py-3 font-semibold text-white">Return to OfferScan</button></main>
   } else {
     page = <><Hero /><HowItWorks /><AnalyzerForm /></>
   }

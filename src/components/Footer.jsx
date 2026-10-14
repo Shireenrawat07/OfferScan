@@ -3,7 +3,7 @@ function Footer() {
   return (
     <footer className="border-t border-purple-100 bg-white px-6 py-7 text-center text-sm text-slate-500">
       <span className="font-semibold text-[#593580]">
-        OfferLens
+        OfferScan
       </span>
 
       <span className="mx-2">·</span>
@@ -11,7 +11,7 @@ function Footer() {
       Look closer. Apply smarter.
 
       <p className="mt-2 text-xs">
-        © 2026 OfferLens
+        © 2026 OfferScan
       </p>
     </footer>
   )

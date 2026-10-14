@@ -17,7 +17,7 @@ function Navbar({ navigate }) {
     <nav className="flex items-center justify-between border-b border-purple-100 bg-white px-6 py-5 md:px-16">
         <a href="/" onClick={(event) => { event.preventDefault(); navigate("/"); }} className="flex items-center gap-3">
         <span className="text-2xl font-bold leading-none tracking-tight text-[#2E164B]">
-          Offer<span className="text-[#8B5CC7]">Lens</span>
+          Offer<span className="text-[#8B5CC7]">Scan</span>
           <span className="mt-1 block text-[11px] font-medium tracking-wide text-[#593580]">Look closer. Apply smarter.</span>
         </span>
       </a>

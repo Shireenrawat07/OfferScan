@@ -15,19 +15,22 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) {
-  console.error("OfferLens backend could not start: JWT_SECRET must be set to a random value of at least 32 characters in server/.env.");
+  console.error("OfferScan backend could not start: JWT_SECRET must be set to a random value of at least 32 characters in server/.env.");
   process.exit(1);
 }
 
-const allowedOrigins = (process.env.FRONTEND_ORIGIN || "http://localhost:5173")
-  .split(",")
-  .map((origin) => origin.trim())
-  .filter(Boolean);
+const allowedOrigins = new Set([
+  ...(process.env.FRONTEND_ORIGIN || "http://localhost:5173")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+  "https://offerlens-app-seven.vercel.app",
+]);
 
 app.use(requestContext);
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin || allowedOrigins.has(origin)) return callback(null, true);
     return callback(new Error("Origin is not allowed by CORS."));
   },
   credentials: true,
@@ -40,7 +43,7 @@ app.use(cookieParser());
 app.use((req, res, next) => {
   if (!["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) return next();
   const origin = req.get("origin");
-  if (origin && !allowedOrigins.includes(origin)) {
+  if (origin && !allowedOrigins.has(origin)) {
     return res.status(403).json({ success: false, error: { code: "ORIGIN_NOT_ALLOWED", message: "This request origin is not allowed." } });
   }
   return next();
@@ -59,10 +62,10 @@ async function startServer() {
     await connectDB();
 
     app.listen(PORT, () => {
-      console.log(`OfferLens backend running on port ${PORT}`);
+      console.log(`OfferScan backend running on port ${PORT}`);
     });
   } catch (error) {
-    console.error(`OfferLens backend could not start: ${error.message}`);
+    console.error(`OfferScan backend could not start: ${error.message}`);
     process.exit(1);
   }
 }

@@ -5,7 +5,7 @@ const healthCheck = (req, res) => {
 
   return res.status(isDatabaseConnected ? 200 : 503).json({
     success: isDatabaseConnected,
-    message: "OfferLens backend is running!",
+    message: "OfferScan backend is running!",
     database: {
       connected: isDatabaseConnected,
     },

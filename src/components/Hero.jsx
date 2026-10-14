@@ -21,7 +21,7 @@ function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
           Analyze job offers and recruiter messages for potential
           warning signs. Make informed career decisions with
-          greater confidence using OfferLens.
+          greater confidence using OfferScan.
         </p>
 
         <a
